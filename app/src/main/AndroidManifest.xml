@@ -15,7 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Phony">
         <activity android:name=".DialContact"></activity>
-        <activity android:name=".AddtoContact" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -31,8 +31,6 @@ public class DialContact extends AppCompatActivity {
 
     String number = "";
 
-    private ActionBar actionBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +40,9 @@ public class DialContact extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
             }
-            else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
-            }
         }
 
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(R.string.dialer);
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -190,12 +185,8 @@ public class DialContact extends AppCompatActivity {
         if (requestCode == MY_PERMISSIONS_REQUEST) {
             if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
-                        == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, R.string.permission_granted, Toast.LENGTH_SHORT).show();
-                } else {
+                        != PackageManager.PERMISSION_GRANTED)
                     Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
-                    finish();
-                }
             }
         }
     }

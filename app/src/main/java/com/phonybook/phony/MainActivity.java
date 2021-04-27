@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -35,7 +34,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -336,9 +334,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sortOptionsDialog() {
-        String[] options = {"Ascending", "Descending"};
+        String[] options = {getString(R.string.ascending), getString(R.string.descending)};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Sort By");
+        builder.setTitle(R.string.sort_by);
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -384,7 +382,7 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK) {
 
-            if (requestCode == IMAGE_PICK_GALLERY_CODE) {
+            if (requestCode == IMAGE_PICK_GALLERY_CODE && data != null) {
                 CropImage.activity(data.getData())
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setAspectRatio(1, 1)
@@ -394,9 +392,8 @@ public class MainActivity extends AppCompatActivity {
                         .setGuidelines(CropImageView.Guidelines.ON)
                         .setAspectRatio(1, 1)
                         .start(this);
-            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && data != null) {
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
-                assert result != null;
                 imageUri = result.getUri();
                 ImageView photoSet = subView.findViewById(R.id.iv_photo);
                 photoSet.setImageURI(imageUri);

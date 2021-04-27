@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:id="@+id/dial_contact"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".DialContact">
+<LinearLayout
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center|bottom"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingTop="0dp"
     android:paddingRight="0dp"
-    android:weightSum="10"
-    tools:context=".DialContact">
+    android:weightSum="10">
+
 
     <TextView android:id="@+id/tv_dialview"
         android:layout_width="wrap_content"
@@ -36,5 +42,5 @@
         />
 
 
-
-</LinearLayout>
+  </LinearLayout>
+    </ScrollView>
