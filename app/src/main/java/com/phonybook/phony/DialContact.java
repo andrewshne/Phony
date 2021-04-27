@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
-public class DialContact extends AppCompatActivity {
+public class DialContact extends AppCompatActivity implements View.OnClickListener {
     private static final int MY_PERMISSIONS_REQUEST = 1;
 
     YouTubePlayerView youTubePlayerView;
@@ -40,6 +41,9 @@ public class DialContact extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
             }
+            else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+            }
         }
 
         ActionBar actionBar = getSupportActionBar();
@@ -50,105 +54,91 @@ public class DialContact extends AppCompatActivity {
 
         tv_dialview = findViewById(R.id.tv_dialview);
         btn_0 = findViewById(R.id.btn_0);
+        btn_0.setOnClickListener(this);
         btn_1 = findViewById(R.id.btn_1);
+        btn_1.setOnClickListener(this);
         btn_2 = findViewById(R.id.btn_2);
+        btn_2.setOnClickListener(this);
         btn_3 = findViewById(R.id.btn_3);
+        btn_3.setOnClickListener(this);
         btn_4 = findViewById(R.id.btn_4);
+        btn_4.setOnClickListener(this);
         btn_5 = findViewById(R.id.btn_5);
+        btn_5.setOnClickListener(this);
         btn_6 = findViewById(R.id.btn_6);
+        btn_6.setOnClickListener(this);
         btn_7 = findViewById(R.id.btn_7);
+        btn_7.setOnClickListener(this);
         btn_8 = findViewById(R.id.btn_8);
+        btn_8.setOnClickListener(this);
         btn_9 = findViewById(R.id.btn_9);
+        btn_9.setOnClickListener(this);
         btn_call = findViewById(R.id.btn_call);
+        btn_call.setOnClickListener(this);
         btn_clear = findViewById(R.id.btn_clear);
+        btn_clear.setOnClickListener(this);
 
-        btn_0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public void onClick (View v) {
+        switch (v.getId()) {
+            case R.id.btn_0: {
                 number = number + "0";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number = number + "0";
-                tv_dialview.setText(number);
-            }
-        });
-        btn_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_1: {
                 number = number + "1";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_2: {
                 number = number + "2";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_3: {
                 number = number + "3";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_4: {
                 number = number + "4";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_5: {
                 number = number + "5";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_6: {
                 number = number + "6";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_7: {
                 number = number + "7";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_8: {
                 number = number + "8";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_9: {
                 number = number + "9";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_clear: {
                 number = "";
                 tv_dialview.setText(number);
+                break;
             }
-        });
-        btn_call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            case R.id.btn_call: {
                 if (tv_dialview.getText().equals("77744455")) {
                     videoAlertDialog();
                 }
@@ -157,9 +147,11 @@ public class DialContact extends AppCompatActivity {
                     intent.setData(Uri.parse("tel:" + number));
                     startActivity(intent);
                 }
+                break;
             }
-        });
-
+            default:
+                break;
+        }
     }
 
     public void videoAlertDialog() {
@@ -185,8 +177,10 @@ public class DialContact extends AppCompatActivity {
         if (requestCode == MY_PERMISSIONS_REQUEST) {
             if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
-                        != PackageManager.PERMISSION_GRANTED)
+                        != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         }
     }
