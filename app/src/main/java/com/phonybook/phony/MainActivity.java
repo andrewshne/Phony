@@ -35,6 +35,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int IMAGE_PICK_CAMERA_CODE = 102;
     private static final int IMAGE_PICK_GALLERY_CODE = 103;
     public Uri imageUri;
+
+    RecyclerView contactView;
     View subView;
     private String[] cameraPermissions;
     private String[] storagePermissions;
@@ -70,21 +74,11 @@ public class MainActivity extends AppCompatActivity {
         cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-        RecyclerView contactView = findViewById(R.id.rc_contactview);
+        contactView = findViewById(R.id.rc_contactview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         contactView.setLayoutManager(linearLayoutManager);
         contactView.setHasFixedSize(true);
-        List<ContactModel> allContacts = dataBaseHelper.selectAll();
-
-
-        if (allContacts.size() > 0) {
-            contactView.setVisibility(View.VISIBLE);
-            mAdapter = new RecyclerViewAdapter(this, allContacts);
-            contactView.setAdapter(mAdapter);
-        } else {
-            contactView.setVisibility(View.GONE);
-            Toast.makeText(this, R.string.contact_empty_add, Toast.LENGTH_LONG).show();
-        }
+        refresh(true);
         fab_add = findViewById(R.id.fab_add);
         fab_dial = findViewById(R.id.fab_dial);
         btn_changetheme = findViewById(R.id.btn_changetheme);
@@ -116,6 +110,25 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void refresh(boolean order) {
+        List<ContactModel> allContacts = dataBaseHelper.selectAll();
+        allContacts.sort(new Comparator<ContactModel>() {
+            @Override
+            public int compare(ContactModel o1, ContactModel o2) {
+                return (order ? 1 : -1) * o1.getName().compareTo(o2.getName());
+            }
+        });
+
+        if (allContacts.size() > 0) {
+            contactView.setVisibility(View.VISIBLE);
+            mAdapter = new RecyclerViewAdapter(this, allContacts);
+            contactView.setAdapter(mAdapter);
+        } else {
+            contactView.setVisibility(View.GONE);
+            Toast.makeText(this, R.string.contact_empty_add, Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void addTaskDialog() {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         subView = layoutInflater.inflate(R.layout.activity_addto_contact, null);
@@ -124,14 +137,6 @@ public class MainActivity extends AppCompatActivity {
         final EditText emailField = subView.findViewById(R.id.et_email);
         final CheckBox workcontactField = subView.findViewById(R.id.cb_workcon);
         final ImageView imageField = subView.findViewById(R.id.iv_photo);
-//            imageField.setImageURI(imageUri);
-//            imageField.setTag(imageUri);
-
-//        if (imageField.getDrawable() == null) {
-//            imageUri = Uri.parse("android.resource://my.package.name/"+R.drawable.ic_action_person);
-//            imageField.setImageURI(null);
-//            imageField.setImageURI(imageUri);
-//        }
         imageField.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -327,7 +332,27 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id  = item.getItemId();
+        if (id == R.id.action_sort) {
+            sortOptionsDialog();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
+    public void sortOptionsDialog() {
+        String[] options = {"Ascending", "Descending"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Sort By");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                    refresh(which == 0);
+            }
+        }).create().show();
+
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

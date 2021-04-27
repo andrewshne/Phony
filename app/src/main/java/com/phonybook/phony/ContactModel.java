@@ -11,6 +11,13 @@ public class ContactModel {
     private String image;
     private boolean iswork;
 
+    public static Comparator<ContactModel> contactModelComparatorAsc = new Comparator<ContactModel>() {
+        @Override
+        public int compare(ContactModel o1, ContactModel o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
+    };
+
     //Constructor
     public ContactModel(int id, String name, String phonenum, String email, String image, boolean iswork) {
         this.id = id;
