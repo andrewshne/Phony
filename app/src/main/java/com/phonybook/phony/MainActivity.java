@@ -118,15 +118,9 @@ public class MainActivity extends AppCompatActivity {
                 return (order ? 1 : -1) * o1.getName().compareTo(o2.getName());
             }
         });
-
-        if (allContacts.size() > 0) {
             contactView.setVisibility(View.VISIBLE);
             mAdapter = new RecyclerViewAdapter(this, allContacts);
             contactView.setAdapter(mAdapter);
-        } else {
-            contactView.setVisibility(View.GONE);
-            Toast.makeText(this, R.string.contact_empty_add, Toast.LENGTH_LONG).show();
-        }
     }
 
     private void addTaskDialog() {
