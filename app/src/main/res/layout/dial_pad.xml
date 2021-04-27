@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="1"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="2"
+            />
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="3"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="4"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="5"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="6"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="7"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="8"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="9"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_clear_button"
+            android:layout_weight="1"
+            android:text="@string/clear"
+            android:textStyle="bold"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_button"
+            android:layout_weight="1"
+            android:text="0"
+            />
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/dial_call_button"
+            android:layout_weight="1"
+            android:text="@string/call"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

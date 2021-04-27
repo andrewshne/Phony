@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Phony</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="work_contact">Work contact</string>
+    <string name="search">Search</string>
+    <string name="tech_support_call">For tech support please call: 77744455 on this app</string>
+    <string name="edit_contact">"Edit your contact "</string>
+    <string name="save">SAVE</string>
+    <string name="invalid_edit">Invalid editing. Check your input</string>
+    <string name="cancel">CANCEL</string>
+    <string name="task_cancelled">Task cancelled</string>
+    <string name="contact_empty_add">Contact list is empty, to add a new contact please press the add button</string>
+    <string name="add_new_contact">Add new contact</string>
+    <string name="add">ADD</string>
+    <string name="invalid_add">Invalid Add. Check input</string>
+    <string name="call">CALL</string>
+    <string name="clear">CLEAR</string>
+    <string name="dialer">Dialer</string>
+    <string name="found_easteregg">Congratulations you found the easter egg!</string>
+    <string name="go_back">GO BACK</string>
+    <string name="rick_roll">Happy Rick Roll :)</string>
+    <string name="permission_granted">Permision granted</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="choose_image">Choose image</string>
+    <string name="camera_storage_require_permission">Camera and Strorage permissions are required</string>
+    <string name="storage_permission_require">Storage permissions are required</string>
+    <string name="error_crop">Error on image crop</string>
+    <string name="email">Email</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

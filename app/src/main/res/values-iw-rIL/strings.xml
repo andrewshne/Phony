@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Phony</string>
+    <string name="name">שם</string>
+    <string name="phone_number">מספר טלפון</string>
+    <string name="work_contact">איש קשר עבודה</string>
+    <string name="search">חיפוש</string>
+    <string name="edit_contact">ערוך\\י את האיש קשר</string>
+    <string name="cancel">ביטול</string>
+    <string name="task_cancelled">המשימה בוטלה</string>
+    <string name="contact_empty_add">רשימת אנשי הקשר שלך ריקים. אנא תלחץ\\י על הוספה</string>
+    <string name="add_new_contact">הוסף\\י איש קשר חדש</string>
+    <string name="add">הוסף\\י</string>
+    <string name="invalid_edit">שגיאה בעריכה.אנא בדוק\\י את הקלדתך</string>
+    <string name="invalid_add">שגיאה בהוספה. אנא בדוק\\י את הקלדתך</string>
+    <string name="call">חייג/י</string>
+    <string name="clear">נקה/י</string>
+    <string name="dialer">חייגן</string>
+    <string name="found_easteregg">ברוכתיי מצאת את הסוד!</string>
+    <string name="go_back">חזור/י חזרה</string>
+    <string name="rick_roll">ריק רול שמח :)</string>
+    <string name="permission_granted">הרשאה הותרה</string>
+    <string name="permission_denied">הרשאה אוסרה</string>
+    <string name="camera">מצלמה</string>
+    <string name="gallery">גלריה</string>
+    <string name="choose_image">בחר/י תמונה</string>
+    <string name="camera_storage_require_permission">הרשאה לקבצים ומצלמה מחוייבת</string>
+    <string name="storage_permission_require">הרשאה לקבצים מחוייבת</string>
+    <string name="error_crop">שגיאה בחיתוך התמונה</string>
+    <string name="email">דואר אלקטרוני</string>
+    <string name="tech_support_call">על מנת לקבל תמיכה טכנית אנא חייג/י למספר:  77744455 מהאפליקציה</string>
+    <string name="darkmode">מצב לילה</string>
+    <string name="save">שמירה</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+</resources>

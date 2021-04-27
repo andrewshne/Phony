@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AddtoContact">
+
+    <ImageView android:id="@+id/iv_photo"
+        android:tag=""
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_action_photoadd"
+        />
+
+    <EditText android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_photo"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/name"
+        android:textSize="12sp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="12sp"
+        />
+
+    <EditText android:id="@+id/et_phonenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_name"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="4dp"
+        android:padding="12sp"
+        android:hint="@string/phone_number"
+        android:textSize="12sp"
+        android:inputType="number"
+        android:maxLines="1"
+        />
+
+    <EditText android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_phonenum"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15sp"
+        android:layout_marginTop="4dp"
+        android:padding="12sp"
+        android:hint="@string/email"
+        android:textSize="12sp"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        />
+
+    <CheckBox android:id="@+id/cb_workcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_email"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="15sp"
+        android:text="@string/work_contact"
+        android:textSize="12sp"
+        android:padding="12dp"
+        />
+
+</RelativeLayout>

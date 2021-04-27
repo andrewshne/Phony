@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding = "4dp"
+    android:background="?attr/bgColor"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rc_contactview"
+        android:layout_marginBottom="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="?attr/listColor"
+        android:paddingBottom="8dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fab_dial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="?attr/fabColorIcon"
+        app:backgroundTint="?attr/fabColor"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginBottom="16dp"
+        android:src="@android:drawable/sym_action_call"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="?attr/fabColorIcon"
+        app:backgroundTint="?attr/fabColor"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@android:drawable/ic_input_add"
+        />
+
+   <androidx.appcompat.widget.AppCompatButton android:id="@+id/btn_changetheme"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom|center"
+       android:layout_marginStart="16sp"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="16dp"
+       android:background="@drawable/button_state"
+       android:text="@string/darkmode"
+       />
+
+</FrameLayout>
